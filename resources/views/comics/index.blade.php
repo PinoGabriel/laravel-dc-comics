@@ -12,5 +12,11 @@
                 </div>
             @endforeach
         </div>
+
+        <div class="container d-flex justify-content-center p-4 newComic">
+            <div>
+                <a href="{{ route('comics.create') }}">Crea il tuo fumetto</a>
+            </div>
+        </div>
     </section>
 @endsection
