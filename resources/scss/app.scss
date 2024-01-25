@@ -1,13 +1,114 @@
 @import "~bootstrap/scss/bootstrap";
 
+a {
+    text-decoration: none;
+}
+
 body {
-    font-family: sans-serif;
-    background: #222;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+#jumbo {
+    display: block;
+    height: 45vh;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+#myCards {
+    background-color: #1C1C1C;
+}
+
+.myCard {
+    padding: 10px;
+    width: calc(100% / 6 - 20px);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    a {
+        background-color: #0282F9;
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+        border-radius: 25px;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+    }
+}
+
+.seriesAbsolute {
+    background-color: #0282F9;
+    padding: 10px 40px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    top: -30px;
+    left: -10px;
+    box-shadow: 4px 5px 2px 0px rgba(0, 0, 0, 0.85);
+}
+
+.myImgThumb {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    object-position: top;
+}
+
+#myLoghi {
+    background-color: #0282F9;
+}
+
+.myLogo {
+    padding: 5px;
+    width: calc(100% / 5 - 10px);
+}
+
+.myLogoImg {
+    height: 60px;
+}
+
+#jumboFooter {
+    background-image: url(../assets/images/footer-bg.jpg);
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
     color: white;
 }
 
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+.logoFooter {
+    background-image: url(../assets/images/dc-logo-bg.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    height: 350px;
+}
+
+.myW40 {
+    width: 40%;
+}
+
+.myHeightLogo {
+    height: 350px;
+}
+
+.myHeight {
+    height: 350px;
+}
+
+#footerBg {
+    background-color: #303030;
+}
+
+.signUp {
+    border: 2px solid #0282F9;
+    font-size: large;
+    font-weight: 600;
+}
+
+.followUs {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #0282F9;
 }

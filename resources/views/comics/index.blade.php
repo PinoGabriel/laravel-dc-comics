@@ -1,23 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            <h2>Fumetti</h2>
-        </div>
-        <div class="row">
+    <section id="myCards">
+        <div class="container position-relative d-flex flex-wrap py-5">
+            <div class="seriesAbsolute position-absolute text-white">CURRENT SERIES</div>
             @foreach ($products as $item)
-                <div class="col-3">
-                    <div class="card" style="width: 18rem;">
-                        <img src="{{ $item->thumb }}" class="card-img-top" alt="{{ $item->title }}">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $item->title }}</h5>
-                            <p class="card-text">{{ $item->price }}</p>
-                            <a href="#" class="btn btn-primary">Mostra dettagli</a>
-                        </div>
-                    </div>
+                <div class="myCard">
+                    <img class="myImgThumb" src={{ $item->thumb }} alt="">
+                    <p class="text-white pt-2">{{ strtoupper($item->title) }}</p>
+                    <a href="{{ route('comics.show', $item->id) }}">Mostra dettagli</a>
                 </div>
             @endforeach
         </div>
-    </div>
+    </section>
 @endsection
