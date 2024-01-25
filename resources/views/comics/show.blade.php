@@ -2,7 +2,7 @@
 
 @section('content')
     <div id="underJumbo"></div>
-    <div class="position-absolute container px-10">
+    <div class="position-relative container px-10">
         <div class="thumbAbsolute">
             <img src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
         </div>
