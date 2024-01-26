@@ -8,7 +8,10 @@
                 <div class="myCard">
                     <img class="myImgThumb" src={{ $item->thumb }} alt="">
                     <p class="text-white pt-2">{{ strtoupper($item->title) }}</p>
-                    <a href="{{ route('comics.show', $item->id) }}">Mostra dettagli</a>
+                    <div class="d-flex">
+                        <a class="btn btn-success" href="{{ route('comics.show', $item->id) }}">Details</a>
+                        <a class="btn btn-primary mx-2" href="{{ route('comics.edit', $item->id) }}">Edit</a>
+                    </div>
                 </div>
             @endforeach
         </div>
