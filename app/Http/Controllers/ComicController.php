@@ -29,6 +29,27 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => "required|min:4",
+            'description' => "required|min:20",
+            /* 'thumb' => "required|", */
+            'price' => "required|numeric|max:10",
+            'series' => "required|",
+            'sale_date' => "required|date",
+            /* 'type' => "required|", */
+        ], [
+            'title.required' => 'Il titolo è obbligatorio',
+            'description.required' => 'La descrizione è obbligatoria',
+            'price.required' => 'Il prezzo è obbligatorio',
+            'series.required' => 'La serie è obbligatoria',
+            'sale_date.required' => 'La data è obbligatoria',
+            'title.min' => 'Il titolo deve essere di almeno 4 caratteri',
+            'description.min' => 'La descrizione deve essere di almeno 20 caratteri',
+            'price.numeric' => 'Il prezzo deve avere un valore numerico',
+            'price.max' => 'Il prezzo può contenere massimo 10 cifre',
+            'sale_date.date' => 'La data deve essere una data XXXX-XX-XX',
+        ]);
+
         $data = $request->all();
 
         $Comic = new Comic();
@@ -66,6 +87,27 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+        $request->validate([
+            'title' => "required|min:4",
+            'description' => "required|min:20",
+            /* 'thumb' => "required|", */
+            'price' => "required|numeric|max:10",
+            'series' => "required|",
+            'sale_date' => "required|date",
+            /* 'type' => "required|", */
+        ], [
+            'title.required' => 'Il titolo è obbligatorio',
+            'description.required' => 'La descrizione è obbligatoria',
+            'price.required' => 'Il prezzo è obbligatorio',
+            'series.required' => 'La serie è obbligatoria',
+            'sale_date.required' => 'La data è obbligatoria',
+            'title.min' => 'Il titolo deve essere di almeno 4 caratteri',
+            'description.min' => 'La descrizione deve essere di almeno 20 caratteri',
+            'price.numeric' => 'Il prezzo deve avere un valore numerico',
+            'price.max' => 'Il prezzo può contenere massimo 10 cifre',
+            'sale_date.date' => 'La data deve essere una data XXXX-XX-XX',
+        ]);
+
         $data = $request->all();
         $comic->update($data);
 
